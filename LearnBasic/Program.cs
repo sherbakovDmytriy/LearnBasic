@@ -234,6 +234,7 @@ namespace Learn
             //Console.Write($"Result:{c}");
             #endregion
 
+            #region hw2
             //bool res;
             //int a;
             //int b;
@@ -271,7 +272,9 @@ namespace Learn
             //    else
             //        Console.WriteLine($"Wrong bitch");
 
-            //}   
+            //}
+            #endregion
+            #region hw
             Console.WriteLine("Expected Output :");
             //string[] array = { "1", "T", "3", "M", "f", "6"};
             ////for (int i = 0; i < array.Length; i++)
@@ -309,36 +312,144 @@ namespace Learn
             //Console.WriteLine($"\n");
             //Console.WriteLine("Sum up:");
             //Console.WriteLine($"{numbers[0] + numbers[1] + numbers[2] + numbers[3] + numbers[4] + numbers[5] + numbers[6]}");
-            Random rnd = new Random();
-            int value = rnd.Next(1, 10);
-            Console.WriteLine(value);
-            int[] array = new int[value];
+            #endregion
+            #region Lektion4
+            //Random rnd = new Random();
+            //int value = rnd.Next(1, 10);
+            //Console.WriteLine(value);
+            //int[] array = new int[value];
 
-            for (int i = 0; i < array.Length; i++)
-            {
-                array[i] = rnd.Next();
-                Console.Write($"{array[i]} ");
+            //for (int i = 0; i< array.Length; i++)
+            //{
+            //    array[i] = rnd.Next();
+            //    Console.Write($"{array[i]} ");
 
-                if (i % 2 == 0)
-                {
-                    array[i] = 2;
-                }
-                else
-                    array[i] = 1;
-            }
-            Console.WriteLine(" ");
+            //    if (i % 2 == 0)
+            //    {
+            //        array[i] = 2;
+            //    }
+            //    else
+            //        array[i] = 1;
+            //}
+            //Console.WriteLine(" ");
 
-            foreach (int number in array)
-            {
-                Console.WriteLine($"{number}");
-            }
-            
+            //foreach (int number in array)
+            //{
+            //    Console.WriteLine($"{number}");
+            //}
             //for (int i = 0; i < array.Length; i++)
             //{
             //    Console.WriteLine($"{array[i]} ");
             //}
+            #endregion
 
+            //Random rnd = new Random();
+            //int value = rnd.Next(1, 5);
+            //Console.WriteLine(value);
+            //int[] array = new int[value];
 
+            //for (int i = 0; i < array.Length; i++)
+            //{
+
+            //    array[i] = rnd.Next();
+            //    Console.Write(array[i]);
+            //    Console.WriteLine(" ");
+            //    Console.WriteLine($"AV result:{array[i] / value}");
+            //}
+
+            //Console.Write("Input number of terms:");
+            //int a = Convert.ToInt32(Console.ReadLine());
+            //for(int i = 0; i <= a; i++)
+            //{
+            //    Console.WriteLine($"Number is : {i} and cube of the {i} is :{i*i*i} ");
+            //}
+
+            //Console.Write("Input the number(Table to be calculated):");
+            //int a = Convert.ToInt32(Console.ReadLine());
+            //int i = 1;
+            //do
+            //{
+            //    Console.WriteLine($" {a}X{i}={a*i}");
+            //    i++;
+            //}
+            //while (a >= i);
+
+            //Console.WriteLine("Input upto the table number starting from 1:");
+            //int a = Convert.ToInt32(Console.ReadLine());
+
+            //for(int i = 1;i <= a; i++)
+            //{
+            //    for(int j = 1 ;j <= a;)
+            //    {
+            //        Console.WriteLine($"{i}*{j} = {i * j}");
+            //        j++;
+            //    }
+            //}
+
+            //Console.WriteLine($"Input number of terms:");
+            //int customerNumber = Convert.ToInt32(Console.ReadLine());
+            //int result = 0;
+            //int counter = 0;
+            //for (int i = 0; counter <= customerNumber; i++)
+            //{
+            //    if (i % 2 != 0)
+            //    {
+            //        Console.WriteLine($"{i}");
+            //        result += i;
+            //        counter++;
+            //    }
+            //    else
+            //        Console.WriteLine($" ");
+            //}           
+            //Console.WriteLine($"Result:{result}");
+
+            //int[][] arr = new int[3][];
+            //arr[0] = new int[] { 1, 2 };
+            //arr[1] = new int[] { 1, 2, 3 };
+            //arr[2] = new int[] { 1, 2, 3, 4, 5 };
+            //for (int i = 0; i < arr.Length; i++)
+            //{
+            //    for (int j = 0; j < arr[i].Length; j++)
+            //    {
+            //        Console.Write(arr[i][j]+" ");
+
+            //    }
+            //    Console.WriteLine();
+            //}
+            Console.WriteLine("Insert number u need:");
+            int a = Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i <= a; i++)
+            {
+                for (int j = 0; j <= i; j++)
+                {
+                    Console.Write(j);
+                }
+                Console.WriteLine();
+            }
+
+            int[] BubbleSort(int[] arr)
+            {
+                for (int i = 1; i < arr.Length; i++)
+                {
+                    for (int j = 0; j < arr.Length - i; j++)
+                    {
+                        if (arr[j] > arr[j + 1])
+                        {
+                            int tmp = arr[j];
+                            arr[j] = arr[j + 1];
+                            arr[j + 1] = tmp;
+                        }
+                    }
+                }
+
+                return arr;
+            }
+
+            int[] arr = { 4, 3, 2, 1 };
+            arr = BubbleSort(arr);
+
+            foreach (int num in arr)
+                Console.Write(num + " ");
 
         }
     }
