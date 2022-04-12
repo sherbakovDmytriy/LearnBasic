@@ -450,7 +450,6 @@ namespace Learn
 
             foreach (int num in arr)
                 Console.Write(num + " ");
-
         }
     }
 }
