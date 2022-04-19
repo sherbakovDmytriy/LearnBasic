@@ -276,7 +276,7 @@ namespace Learn
             //}
             #endregion
             #region hw
-            Console.WriteLine("Expected Output :");
+            //Console.WriteLine("Expected Output :");
             //string[] array = { "1", "T", "3", "M", "f", "6"};
             ////for (int i = 0; i < array.Length; i++)
             ////{
@@ -417,28 +417,39 @@ namespace Learn
             //    }
             //    Console.WriteLine();
             //}
-            Console.WriteLine("Insert number u need:");
-            int a = Convert.ToInt32(Console.ReadLine());
-            for (int i = 0; i <= a; i++)
-            {
-                for (int j = 0; j <= i; j++)
-                {
-                    Console.Write(j);
-                }
-                Console.WriteLine();
-            }
+            
+            //Console.WriteLine("Insert number u need:");
+            //int a = Convert.ToInt32(Console.ReadLine());
+            //for (int i = 0; i <= a; i++)
+            //{
+            //    for (int j = 0; j <= i; j++)
+            //    {
+            //        Console.Write(j);
+            //    }
+            //    Console.WriteLine();
+            //}
 
             // Generate random array
-            int[] arr = new int[10];
+            int arrLength = 10;
+            int[] arr1 = new int[arrLength];
+            int[] arr2 = new int[arrLength];
 
-            Random randNum = new Random();
-            for (int i = 0; i < arr.Length; i++)
-                arr[i] = randNum.Next(1, 100);
+            Random randNum = new();
+            for (int i = 0; i < arrLength; i++)
+            {
+                arr1[i] = randNum.Next(1, 100);
+                arr2[i] = randNum.Next(1, 100);
+            }
 
-            arr = ArraySorter.BubbleSort(arr);
-            arr = ArraySorter.InsertionSort(arr);
+            arr1 = ArraySorter.BubbleSort(arr1);
+            Console.WriteLine("Bubble Sort");
+            ArraySorter.PrintArray(arr1);
 
-            ArraySorter.PrintArray(arr);
+            Console.WriteLine("\n");
+
+            arr2 = ArraySorter.InsertionSort(arr2);
+            Console.WriteLine("Insertion Sort");
+            ArraySorter.PrintArray(arr2);
         }
     }
 }
