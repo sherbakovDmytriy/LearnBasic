@@ -3,6 +3,7 @@
 //Console.Write(a);
 //bool b = false;
 //Console.WriteLine($"\nРаботает:{b}");
+using LearnBasic.Master;
 using System;
 
 #region Samples2L
@@ -427,30 +428,17 @@ namespace Learn
                 Console.WriteLine();
             }
 
-            int[] BubbleSort(int[] arr)
-            {
-                for (int i = 1; i < arr.Length; i++)
-                {
-                    for (int j = 0; j < arr.Length - i; j++)
-                    {
-                        if (arr[j] > arr[j + 1])
-                        {
-                            int tmp = arr[j];
-                            arr[j] = arr[j + 1];
-                            arr[j + 1] = tmp;
-                        }
-                    }
-                }
+            // Generate random array
+            int[] arr = new int[10];
 
+            Random randNum = new Random();
+            for (int i = 0; i < arr.Length; i++)
+                arr[i] = randNum.Next(1, 100);
 
-                return arr;
-            }
+            arr = ArraySorter.BubbleSort(arr);
+            arr = ArraySorter.InsertionSort(arr);
 
-            int[] arr = { 4, 3, 2, 1 };
-            arr = BubbleSort(arr);
-
-            foreach (int num in arr)
-                Console.Write(num + " ");
+            ArraySorter.PrintArray(arr);
         }
     }
 }
