@@ -85,6 +85,23 @@
         {
             while(delta != 0)
             {
+                for(int i = delta; i < array.Length; i++)
+                {
+                    int prevIndex = i - delta;
+                    int currentIndex = i;
+
+                    while (prevIndex >= 0)
+                    {
+                        if (array[currentIndex] < array[prevIndex])
+                        {
+                            Swap(currentIndex, prevIndex);
+                            currentIndex = prevIndex;
+                            prevIndex -= delta;
+                        }
+                        else
+                            break;
+                    }
+                }
 
                 delta--;
             }

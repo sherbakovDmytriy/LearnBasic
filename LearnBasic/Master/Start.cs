@@ -15,7 +15,7 @@ namespace LearnBasic.Master
 
         private static void ArraySorterExamples()
         {
-            ArraySorter arr = new(10);
+            ArraySorter arr = new(15);
 
             arr.FillByRandom();
             Console.WriteLine("Bubble Sort");
@@ -37,6 +37,14 @@ namespace LearnBasic.Master
             Console.WriteLine("Selection Sort");
             arr.PrintArray();
             arr.SelectionSort();
+            Console.WriteLine();
+            arr.PrintArray();
+            Console.WriteLine("\n");
+
+            arr.FillByRandom();
+            Console.WriteLine("Shell Sort");
+            arr.PrintArray();
+            arr.ShellSort(2);
             Console.WriteLine();
             arr.PrintArray();
             Console.WriteLine("\n");
