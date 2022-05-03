@@ -417,7 +417,7 @@ namespace Learn
             //    }
             //    Console.WriteLine();
             //}
-            
+
             //Console.WriteLine("Insert number u need:");
             //int a = Convert.ToInt32(Console.ReadLine());
             //for (int i = 0; i <= a; i++)
@@ -429,27 +429,8 @@ namespace Learn
             //    Console.WriteLine();
             //}
 
-            // Generate random array
-            int arrLength = 10;
-            int[] arr1 = new int[arrLength];
-            int[] arr2 = new int[arrLength];
+            Start.Up();
 
-            Random randNum = new();
-            for (int i = 0; i < arrLength; i++)
-            {
-                arr1[i] = randNum.Next(1, 100);
-                arr2[i] = randNum.Next(1, 100);
-            }
-
-            arr1 = ArraySorter.BubbleSort(arr1);
-            Console.WriteLine("Bubble Sort");
-            ArraySorter.PrintArray(arr1);
-
-            Console.WriteLine("\n");
-
-            arr2 = ArraySorter.InsertionSort(arr2);
-            Console.WriteLine("Insertion Sort");
-            ArraySorter.PrintArray(arr2);
         }
     }
 }

@@ -1,19 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LearnBasic.Master
+﻿namespace LearnBasic.Master
 {
-    internal class ArraySorter
+    public class ArraySorter
     {
+
+        public int[] array;
+
+        public ArraySorter(int length)
+        {
+            array = new int[length];
+        }
+
+        public void FillByRandom()
+        {
+            Random randNum = new();
+            for (int i = 0; i < array.Length; i++)
+                array[i] = randNum.Next(1, 100);
+        }
 
         /*
          * Пример работы
          * https://media.tproger.ru/uploads/2017/09/BubbleSort.gif
          */
-        public static int[] BubbleSort(int[] array)
+        public void BubbleSort()
         {
             // Цикл прохда по массиву от второго до последнего элемента
             for (int i = 1; i < array.Length; i++)
@@ -30,22 +38,16 @@ namespace LearnBasic.Master
                 for (int j = 0; j < array.Length - i; j++)
                 {
                     if (array[j] > array[j + 1])
-                    {
-                        int tmp = array[j];
-                        array[j] = array[j + 1];
-                        array[j + 1] = tmp;
-                    }
+                        Swap(j, j + 1);
                 }
             }
-
-            return array;
         }
 
         /*
          * Пример работы
          * https://media.tproger.ru/uploads/2017/09/InsertionSort.gif
          */
-        public static int[] InsertionSort(int[] array)
+        public void InsertionSort()
         {
             // Цикл проходит от первого до предпоследнего элемента 
             for(int i = 0; i < array.Length - 1; i++)
@@ -57,23 +59,48 @@ namespace LearnBasic.Master
                 for (int j = i + 1; j != 0; j--)
                 {
                     if (array[j] < array[j - 1])
-                    {
-                        int tmp = array[j];
-                        array[j] = array[j - 1];
-                        array[j - 1] = tmp;
-                    }
+                        Swap(j, j - 1);
                     else
                         break;
                 }
             }
-
-            return array;
         }
 
-        public static void PrintArray(int[] array)
+        public void SelectionSort()
+        {
+            for(int i = 0; i < array.Length - 1; i++)
+            {
+                int minIndex = i;
+                for (int j = i + 1; j < array.Length; j++)
+                {
+                    if(array[minIndex] > array[j])
+                        minIndex = j;
+                }
+
+                Swap(minIndex, i);
+            }
+        }
+
+        public void ShellSort(int delta)
+        {
+            while(delta != 0)
+            {
+
+                delta--;
+            }
+        }
+
+        public void PrintArray()
         {
             foreach (int num in array)
                 Console.Write(num + " ");
+        }
+
+        private void Swap(int index1, int index2)
+        {
+            int tmp = array[index1];
+            array[index1] = array[index2];
+            array[index2] = tmp;
         }
     }
 }
